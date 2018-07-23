@@ -22,12 +22,20 @@ When(/^I drag "([^"]*)" to "([^"]*)"$/, (element, target) => {
     elementHelper.getPageObjectElement(target)).mouseUp().perform();
 })
 
-When(/^I wait until "([^"]*)" is present$/, (alias) => {
+When(/^I wait until "([^"]*)" is( not)? present$/, (alias, notArg) => {
     const element = elementHelper.getPageObjectElement(alias);
-    return elementHelper.browser.wait(elementHelper.until.elementIsVisible(element), 10 * 1000);
+    if (notArg) {
+        return elementHelper.browser.wait(elementHelper.until.elementIsNotVisible(element), 10 * 1000);
+    } else {
+        return elementHelper.browser.wait(elementHelper.until.elementIsVisible(element), 10 * 1000);
+    }
 });
 
 When(/^I wait until "([^"]*)" is clickable$/, (alias) => {
     const element = elementHelper.getPageObjectElement(alias);
     return elementHelper.browser.wait(elementHelper.until.elementIsVisible(element), 10 * 1000);
+});
+
+When(/^I wait "([^"]*)" seconds$/, (seconds) => {
+    return elementHelper.browser.sleep(seconds * 1000);
 });
