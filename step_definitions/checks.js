@@ -24,7 +24,7 @@ Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)"$/, async (alias, notArg, 
 });
 
 Then(/^Page title should( not)? contain "([^"]*)"$/, async (notArg, text) => {
-    let pageTitle = await browser.getTitle();
+    let pageTitle = await elementHelper.browser.getTitle();
     if (notArg) {
         return expect(pageTitle.indexOf(text)).to.equal(-1);
     }

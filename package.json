@@ -7,10 +7,12 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "cucumber": "^3.2.1",
+    "selenium-webdriver": "3.3.0",
+    "selenium-cucumber-js": "^1.5.13",
     "yargs": "^11.0.0"
   },
   "scripts": {
-    "test": "protractor config.js"
+    "test": "node ./node_modules/.bin/cucumber.js"
   },
   "repository": {
     "type": "git",
