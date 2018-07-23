@@ -1,6 +1,6 @@
 "use strict";
 const { Then, When, Given } = require('cucumber');
-const elementHelper = require('./util/stepFunctions.js');
+const elementHelper = require('./util/ElementHelper');
 const by = elementHelper.by;
 const { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(60 * 1000);
@@ -29,11 +29,6 @@ When(/^I wait until "([^"]*)" is( not)? present$/, (alias, notArg) => {
     } else {
         return elementHelper.browser.wait(elementHelper.until.elementIsVisible(element), 10 * 1000);
     }
-});
-
-When(/^I wait until "([^"]*)" is clickable$/, (alias) => {
-    const element = elementHelper.getPageObjectElement(alias);
-    return elementHelper.browser.wait(elementHelper.until.elementIsVisible(element), 10 * 1000);
 });
 
 When(/^I wait "([^"]*)" seconds$/, (seconds) => {
