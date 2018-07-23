@@ -1,0 +1,26 @@
+{
+  "name": "plain-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^3.2.1",
+    "yargs": "^11.0.0"
+  },
+  "scripts": {
+    "test": "protractor config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VolhaValasevich/plain-cucumber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VolhaValasevich/plain-cucumber/issues"
+  },
+  "homepage": "https://github.com/VolhaValasevich/plain-cucumber#readme"
+}
